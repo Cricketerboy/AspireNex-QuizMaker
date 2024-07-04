@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-creator">
+        <h1>Create a Quiz</h1>
+        <form id="quiz-form">
+            <label for="quiz-title">Quiz Title:</label>
+            <input type="text" id="quiz-title" required>
+
+            <div id="questions-container">
+                <div class="question active" id="question-1">
+                    <label for="question-1-text">Question 1:</label>
+                    <input type="text" id="question-1-text" class="question-text" required>
+                    <label>Options:</label>
+                    <input type="text" class="option" required>
+                    <input type="text" class="option" required>
+                    <input type="text" class="option" required>
+                    <input type="text" class="option" required>
+                    <label for="correct-answer-1">Correct Answer (1-4):</label>
+                    <input type="number" id="correct-answer-1" class="correct-answer" min="1" max="4" required>
+                </div>
+            </div>
+
+            <button type="button" id="previous-question" style="display: none;">Previous Question</button>
+            <button type="button" id="next-question" style="display: none;">Next Question</button>
+            <button type="button" id="add-question">Add Question</button>
+            <button type="submit">Create Quiz</button>
+        </form>
+    </div>
+
+    <div id="quiz-taker" style="display: none;">
+        <h1 id="quiz-title-display"></h1>
+        <div id="quiz-questions"></div>
+        <button type="button" id="previous-question-take" style="display: none;">Previous Question</button>
+        <button type="button" id="next-question-take" style="display: none;">Next Question</button>
+        <button id="submit-quiz">Submit Quiz</button>
+        <button id="reattempt-quiz" style="display: none;">Reattempt Quiz</button> <!-- Added reattempt quiz button -->
+        <div id="quiz-feedback"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
