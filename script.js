@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigate to the next question during quiz taking
     nextQuestionBtnTake.addEventListener('click', () => {
         const currentQuestionIndexTake = Array.from(document.querySelectorAll('.quiz-question')).findIndex(q => q.style.display === 'block');
+        const selectedOption = document.querySelector('.quiz-question[style="display: block;"] input[type="radio"]:checked');
         if (selectedOption) {
             if (currentQuestionIndexTake < quizData.length - 1) {
                 showQuestionTake(currentQuestionIndexTake + 1);
@@ -158,10 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            quizFeedback.innerHTML = `You got ${correctCount} out of ${quizData.length} correct !`;
+            quizFeedback.innerHTML = `You got ${correctCount} out of ${quizData.length} correct!`;
         } else {
             alert('Please answer all questions before submitting the quiz.');
-            quizFeedback.innerHTML = 'Keep going ! Answer all questions to see your results.';
+            quizFeedback.innerHTML = 'Keep going! Answer all questions to see your results.';
         }
 
         if(allQuestionsAnswered) {
